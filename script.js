@@ -54,6 +54,7 @@ d3.json(url)
     
       svg
         .append('g')
+        .attr('id', 'x-axis')
         .attr('class', 'x-axis')
         .attr('transform', 'translate(' + padding.left + ',' + (height + padding.top) + ')')
         .call(xAxis)
@@ -64,6 +65,7 @@ d3.json(url)
         .style('text-anchor', 'middle');
       svg
         .append('g')
+        .attr('id', 'y-axis')
         .attr('class', 'y-axis')
         .attr('transform', 'translate(' + padding.left + ',' + padding.top + ')')
         .call(yAxis)
@@ -126,6 +128,7 @@ d3.json(url)
 
             tooltip
               .html(content)
+              .attr('data-year', d.year)
               .style('opacity', 0.9)
               .style('left', rectX + 'px')
               .style('top', rectY + 'px');
@@ -144,6 +147,7 @@ d3.json(url)
 
     const legendColors = svg
       .append('g')
+      .attr('id', 'legend')
       .attr('class', 'legend')
       .attr('width', legendWidth)
       .attr('height', legendHeight)
