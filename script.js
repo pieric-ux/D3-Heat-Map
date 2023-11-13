@@ -79,7 +79,8 @@ d3.json(url)
     .select('body')
     .append('div')
     .attr('class', 'tooltip')
-    .attr('id', 'tooltip');
+    .attr('id', 'tooltip')
+    .style('opacity', 0);
 
     // Create a sequential color scale with interpolateRdBu
     const maxExtent = Math.max(
